@@ -25,7 +25,7 @@ def getAverageL(image):
 
 def convertImageToAscii(fileName, cols, scale, moreLevels):
     """
-    Given Image and dims (rows, cols) returns an m*n list of Images 
+    Given Image and dimensions (rows, cols) returns an m*n list of Images 
     """
     # declare globals
     global gscale1, gscale2
@@ -33,7 +33,7 @@ def convertImageToAscii(fileName, cols, scale, moreLevels):
     image = Image.open(fileName).convert('L')
     # store dimensions
     W, H = image.size[0], image.size[1]
-    print("input image dims: %d x %d" % (W, H))
+    print("input image dimensions: %d x %d" % (W, H))
     # compute width of tile
     w = W/cols
     # compute tile height based on aspect ratio and scale
@@ -42,7 +42,7 @@ def convertImageToAscii(fileName, cols, scale, moreLevels):
     rows = int(H/h)
     
     print("cols: %d, rows: %d" % (cols, rows))
-    print("tile dims: %d x %d" % (w, h))
+    print("tile dimensions: %d x %d" % (w, h))
 
     # check if image size is too small
     if cols > W or rows > H:
